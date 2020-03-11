@@ -39,12 +39,13 @@ app.post('/first',async(req,res)=>{
     
     res.render(__dirname + "/main.html", {name:id,link:link});
 });
-app.get('/:code', async(req, res) =>{
+app.get('/first/:code', async(req, res) =>{
     const urlCode = req.params.code;
     var querry = {name:urlCode};
+    var a="";
     await client.db("new").collection("persons").find(querry).toArray(function(err, result) {
         console.log(result);
-        //res.redirect(result[0].address);
+        res.redirect(result[0].address);
         if (err) throw err;});
 });
 client.close();
