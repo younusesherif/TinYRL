@@ -54,7 +54,16 @@ app.get('/:code', async(req, res) =>{
                 }
                 else
                 {
-                    res.redirect(result[0].address);
+                    link=result[0].address;
+                    if(link.startsWith("http://")||link.startsWith("https://")||link.startsWith("ftp://"))
+                        {
+                            res.redirect(link);
+                        }
+                        else
+                            {
+                                link="http://"+link;
+                                res.redirect(link);
+                            }
                 }
             }
     });
