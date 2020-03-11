@@ -44,9 +44,8 @@ app.get('/:code', async(req, res) =>{
     var querry = {name:urlCode};
     await client.db("new").collection("persons").find(querry).toArray(function(err, result) {
         console.log(result);
-        res.redirect(result[0].address);
-        if (err) throw err;
-    });
+        //res.redirect(result[0].address);
+        if (err) throw err;});
 });
 client.close();
 //app.listen(3000, () => console.log(`server run on port 3000!`))
