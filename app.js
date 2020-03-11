@@ -38,7 +38,7 @@ app.post('/first',async(req,res)=>{
     await client.db("new").collection("persons").insertOne({name:id,address:link});  
     
     res.render(__dirname + "/main.html", {name:id,link:link});
-});
+});/*
 app.get('/:code', async(req, res) =>{
     const urlCode = req.params.code;
     var querry = {name:urlCode};
@@ -47,7 +47,7 @@ app.get('/:code', async(req, res) =>{
         res.redirect(result[0].address);
         if (err) throw err;
     });
-});
+});*/
 client.close();
 //app.listen(3000, () => console.log(`server run on port 3000!`))
 app.listen(process.env.PORT || 3000)
