@@ -1,0 +1,6 @@
+{
+    "name": "TinyRL",
+    "description": "a simple url shortener app using express and mongodb",
+    "repository":"https://github.com/younusesherif/TinYRL",
+    "keywords": ["node","express","static"]
+}

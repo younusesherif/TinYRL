@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "app.js"
   },
-  "author": "",
+  "author": "sherif",
   "license": "ISC",
-  "description": "",
+  "description": "a simple url shortener using express",
   "dependencies": {
     "body-parser": "^1.19.0",
     "ejs": "^3.0.1",
@@ -15,9 +15,22 @@
     "mongodb": "^3.5.4"
   },
   "engines": {
-    "node":"10.16.0"
+    "node": "10.16.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/younusesherif/TinYRL.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "static"
+  ],
+  "bugs": {
+    "url": "https://github.com/younusesherif/TinYRL/issues"
+  },
+  "homepage": "https://github.com/younusesherif/TinYRL#readme"
 }
