@@ -36,17 +36,28 @@ app.post('/first',async(req,res)=>{
     const link = req.body.name;
     const id = random(5);
     await client.db("new").collection("persons").insertOne({name:id,address:link});  
-    
+    await console.log("data inserted");
     res.render(__dirname + "/main.html", {name:id,link:link});
 });
 app.get('/:code', async(req, res) =>{
     const urlCode = req.params.code;
     var querry = {name:urlCode};
-    var a="";
     await client.db("new").collection("persons").find(querry).toArray(function(err, result) {
-        console.log(result);
-        res.redirect(result[0].address);
-        if (err) throw err;});
+        if (err) {
+              console.log("invalid string");
+        } 
+        else{
+                if(result.length===0)
+                {
+                    res.sendFile(__dirname + '/wrong.html');
+                    console.log("not");
+                }
+                else
+                {
+                    res.redirect(result[0].address);
+                }
+            }
+    });
 });
 client.close();
 //app.listen(3000, () => console.log(`server run on port 3000!`))
