@@ -39,7 +39,7 @@ app.post('/first',async(req,res)=>{
     
     res.render(__dirname + "/main.html", {name:id,link:link});
 });
-app.get('/first/:code', async(req, res) =>{
+app.get('/:code', async(req, res) =>{
     const urlCode = req.params.code;
     var querry = {name:urlCode};
     var a="";
