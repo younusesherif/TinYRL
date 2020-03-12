@@ -55,6 +55,7 @@ app.get('/:code', async(req, res) =>{
                 else
                 {
                     link=result[0].address;
+                    console.log(result);
                     if(link.startsWith("http://")||link.startsWith("https://")||link.startsWith("ftp://"))
                         {
                             res.redirect(link);
